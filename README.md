@@ -24,6 +24,7 @@
   python3 01_comb_4spec.py
   ```
   这个脚本把所有需要随机组合的物种名称和固定外群写在脚本里面，就可以自动生成所有的组合写入out_four_species_array.txt文件
+  这个脚本来自（https://wu-tz.github.io/2024/04/09/QuIBL%E6%96%B9%E6%B3%95%E6%A3%80%E9%AA%8C%E5%9F%BA%E5%9B%A0%E6%B8%90%E6%B8%97%E5%92%8C%E4%B8%8D%E5%AE%8C%E5%85%A8%E8%B0%B1%E7%B3%BB%E5%88%86%E9%80%89/），里面还有一些关于QUIBL运行的解读或者脚本，可以进一步阅读了解
   这里我每个四物种组合都有一个单独的文件夹，放各自的输入文件，配置文件和输出文件
   ```
   while read -r a b c d
