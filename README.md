@@ -27,24 +27,24 @@
   这个脚本来自：https://wu-tz.github.io/2024/04/09/QuIBL%E6%96%B9%E6%B3%95%E6%A3%80%E9%AA%8C%E5%9F%BA%E5%9B%A0%E6%B8%90%E6%B8%97%E5%92%8C%E4%B8%8D%E5%AE%8C%E5%85%A8%E8%B0%B1%E7%B3%BB%E5%88%86%E9%80%89/
   里面还有一些关于QUIBL运行的解读或者脚本，可以进一步阅读了解
   这里我每个四物种组合都有一个单独的文件夹，放各自的输入文件，配置文件和输出文件
-  ```
+```
   while read -r a b c d
     do
     CHR="${a}"_"${b}"_"${c}"
     mkdir $CHR
   done < out_four_species_array.txt
-  ```
+```
 ## 树文件：
 
-  - 我这里用的是划窗口（5kb大小的窗口，窗口大小参考的是Genomic architecture and introgression shape a butterfly radiation，并且窗口再小的话我的服务器有点无法承受）得到的若干窗口树，每行一个nwk格式的树文件
+我这里用的是划窗口（5kb大小的窗口，窗口大小参考的是Genomic architecture and introgression shape a butterfly radiation，并且窗口再小的话我的服务器有点无法承受）得到的若干窗口树，每行一个nwk格式的树文件
 
-  - 由于我的窗口树太多了，我随机抽样了5000棵树作为输入（这里可以参考不同的文章抽样的大小，树越多，运行的时间成本越大；这里我后续做了多次重复来避免结果的随机性
+由于我的窗口树太多了，我随机抽样了5000棵树作为输入（这里可以参考不同的文章抽样的大小，树越多，运行的时间成本越大；这里我后续做了多次重复来避免结果的随机性
  
-  - ```
+```
     shuf -n 5000 window.tree > 5000.tree
-  - ```
-  - 随后我需要把1.sub.tree针对不同的四物种组合提取各自的子树作为输入
-  - ```
+```
+随后我需要把1.sub.tree针对不同的四物种组合提取各自的子树作为输入
+```
     while read -r a b c d
     do
     CHR="${a}_${b}_${c}"
@@ -53,11 +53,11 @@
     echo "$i" | /data/00/user/user187/miniconda3/bin/nw_prune - -v $a $b $c Outgroup >> $CHR/1.sub.tree
     done < 5000.tree
     done < out_four_species_array.txt
-    ```
-    - 这里Outgroup是我外群的名字
+```
+这里Outgroup是我外群的名字
 
-- 配置文件sampleInputFile.txt
-  - 模板：
+## 配置文件sampleInputFile.txt
+模板：
     - /path_to_file/推荐使用绝对路径
     - treefile: /path_to_file/1.sub.tree指定输入的树文件也就是上面的1.sub.tree
     - OutputPath: /path_to_file/Output.1.csv指定输出文件路径，这里我推荐每个四物种组合都有一个单独的文件夹，放各自的输入文件，配置文件和输出文件，故我使用的输出文件名称都是一致的
@@ -75,7 +75,7 @@ maxcores:10
 [Output]
 OutputPath: /path_to_file/Output.1.csv
 ```
-  - 写一个循环给每个四物种组合生成配置文件放入各自的文件夹
+写一个循环给每个四物种组合生成配置文件放入各自的文件夹
 
 # 运行
 - 需要按照QUIBL的github里面的教程构建环境，这里我的环境在lzu
