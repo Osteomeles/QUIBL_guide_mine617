@@ -1,4 +1,4 @@
-# QUIBL-
+# QUIBL-使用QuIBL过程中的经验记录
 自用经验，可能有不准确的地方
 
 # 参考REFERENCE：
