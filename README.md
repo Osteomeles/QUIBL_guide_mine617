@@ -58,10 +58,10 @@
 
 ## 配置文件sampleInputFile.txt
 模板：
-    - /path_to_file/推荐使用绝对路径
-    - treefile: /path_to_file/1.sub.tree指定输入的树文件也就是上面的1.sub.tree
-    - OutputPath: /path_to_file/Output.1.csv指定输出文件路径，这里我推荐每个四物种组合都有一个单独的文件夹，放各自的输入文件，配置文件和输出文件，故我使用的输出文件名称都是一致的
-    - totaloutgroup: Outgroup指定外群物种名称
+- /path_to_file/推荐使用绝对路径
+- treefile: /path_to_file/1.sub.tree指定输入的树文件也就是上面的1.sub.tree
+- OutputPath: /path_to_file/Output.1.csv指定输出文件路径，这里我推荐每个四物种组合都有一个单独的文件夹，放各自的输入文件，配置文件和输出文件，故我使用的输出文件名称都是一致的
+- totaloutgroup: Outgroup指定外群物种名称
 ```
 [Input]
 treefile: /path_to_file/1.sub.tree
