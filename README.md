@@ -124,6 +124,7 @@ dos2unix output.1.all.txt
 - totalILSProp = (mixprop1*count)/num_alltree
   - 这里num_alltree是所有的窗口树，因为我一共抽样5000棵树，故我直接用的5000
 - totalIntroProp = (mixprop2*count)/num_alltree
+- 得到output.1.all.plus.txt得把新得到的列列名0改为对应的diffBIC/totalILSProp/totalIntroProp
 ```
 awk -F "," '{print $1","$2","$3","$4","$5","$6","$7","$8","$9","$10","$11","$9-$10","$5*$11/5000","$6*$11/5000}' output.1.all.txt >> output.1.all.plus.txt
 ```
