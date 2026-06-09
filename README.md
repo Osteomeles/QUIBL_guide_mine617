@@ -82,7 +82,7 @@ OutputPath: /path_to_file/Output.1.csv
 ```
 conda activate /data/00/user/user187/miniconda3/envs/QuIBL_env
 ```
-把所有组合的运行命令都写入一个sh文件，提交任务，用pNormal节点就好，c用1，m用1，运行需要的时间成本是比较高的；命令行示例：
+把所有组合的运行命令都写入一个sh文件，提交任务，用pNormal就好，c用1，m用1，运行需要的时间成本是比较高的；命令行示例：
 ```
 python /data/00/user/user187/00.apps/QuIBL/QuIBL.py ./path_to_file/sampleInputFile.txt
 ```
