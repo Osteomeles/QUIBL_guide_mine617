@@ -101,7 +101,9 @@ python3 check_outgroup.py -i check.list -t species_tree.nwk -o result.txt
 ```
 
 先把所有的物种组合的结果都整合为一个：
+
 每个物种组合的分析都会得到一个结果文件Output.csv
+
 共有这些列：triplet,outgroup,C1,C2,mixprop1,mixprop2,lambda2Dist,lambda1Dist,BIC2Dist,BIC1Dist,count
 - 具体意义参考：https://github.com/miriammiyagi/QuIBL
 
