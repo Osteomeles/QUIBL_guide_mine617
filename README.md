@@ -30,7 +30,7 @@
   ```
   while read -r a b c d
     do
-    CHR="${a}"_"${b}"_"${c}"_"${d}"_Sorex
+    CHR="${a}"_"${b}"_"${c}"
     mkdir $CHR
   done < out_four_species_array.txt
   ```
@@ -61,7 +61,7 @@ done < out_four_species_array.txt
     - /path_to_file/推荐使用绝对路径
     - treefile: /path_to_file/1.sub.tree指定输入的树文件也就是上面的1.sub.tree
     - OutputPath: /path_to_file/Output.1.csv指定输出文件路径，这里我推荐每个四物种组合都有一个单独的文件夹，放各自的输入文件，配置文件和输出文件，故我使用的输出文件名称都是一致的
-    - totaloutgroup: Sorex指定外群
+    - totaloutgroup: Outgroup指定外群物种名称
 ```
 [Input]
 treefile: /path_to_file/1.sub.tree
@@ -69,7 +69,7 @@ numdistributions: 2
 likelihoodthresh: 0.01
 numsteps: 50
 gradascentscalar: 0.5
-totaloutgroup: Sorex
+totaloutgroup: Outgroup
 multiproc: True
 maxcores:10
 [Output]
