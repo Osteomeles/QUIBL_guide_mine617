@@ -155,7 +155,11 @@ do
 awk -F "," -v val="$b" -v val2="$d" '$1 == val && $2 != val2' output.1.all.plus.txt >> output.1.all.plus.dis.txt.tmp
 done < ../check.list
 
+dos2unix output.1.all.plus.dis.txt.tmp
+
 cat head output.1.all.plus.dis.txt.tmp > output.1.all.plus.dis.txt
+
+dos2unix output.1.all.plus.dis.txt
 
 while read -r a b                                                                                                            
 do
@@ -215,6 +219,8 @@ cat head output.1.all.dis.txt.tmp > output.1.all.dis.txt
 这里diffBIC保持不变，totalILSProp,totalIntroProp的分母变成all_discordant_tree，也就是两个不一致树拓扑行的count的加和
 ```
 python3 add_quibl_col.py output.1.all.dis.txt output.1.all.plus.dis.txt
+
+dos2unix output.1.all.plus.dis.txt
 ```
 接下来的做法就和之前一样了，首先把相同物种对的分到各自的文件夹下面
 ```
