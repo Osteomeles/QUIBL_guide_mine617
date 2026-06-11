@@ -16,6 +16,7 @@
 - 其他有QUIBL分析的文章，可以参考，看看其他人是如何构造输入文件和分析结果的
 
   - Incomplete lineage sorting and phenotypic evolution in marsupials
+  - Genomic insights into the secondary aquatic transition of penguins
 
 # 输入文件INPUT FILE：
 
